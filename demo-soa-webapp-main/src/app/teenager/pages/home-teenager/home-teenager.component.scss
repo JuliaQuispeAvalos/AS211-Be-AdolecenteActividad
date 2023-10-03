@@ -1,0 +1,10 @@
+.columna-acciones {
+  display: flex; /* Establecer el contenedor como flexbox */
+  gap: 3px; /* Espacio de 3px entre elementos hijos */
+  align-items: center;/* Centrar verticalmente */
+}
+.address-and-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Alinea verticalmente el texto y el botón */
+}

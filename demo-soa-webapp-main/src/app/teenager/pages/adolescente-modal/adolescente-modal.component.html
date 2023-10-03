@@ -1,0 +1,50 @@
+<div class="container">
+  <!-- Columna Izquierda -->
+  <div class="column">
+    <div class="form-container">
+      <h2 class="text-center">Formulario</h2>
+      <form>
+        <input class="form-input" type="text" placeholder="Dirección">
+        <input class="form-input" type="text" placeholder="Familiar">
+        <input class="form-input" type="text" placeholder="Parentesco">
+        <button class="form-button" type="submit">Guardar</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Columna Derecha -->
+  <div class="column">
+    <h2 class="text-center">LISTADO DE DIRECCIONES</h2>
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col" class="text-center"><strong>Dirección</strong></th>
+        <th scope="col" class="text-center"><strong>Familiar</strong></th>
+        <th scope="col" class="text-center"><strong>Parentesco</strong></th>
+        <th scope="col" class="text-center"><strong>Acciones</strong></th>
+      </tr>
+      </thead>
+      <tbody >
+      <tr>
+        <td class="text-center">Asoc. Las Flores de Imperial mz B lte 23</td>
+        <td class="text-center">Omar Padilla Castillo</td>
+        <td class="text-center">Hermano</td>
+
+        <td>
+          <div class="columna-acciones">
+            <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+              <mat-icon>mode_edit</mat-icon>
+            </button>
+
+            <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+        </td>
+
+      </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>

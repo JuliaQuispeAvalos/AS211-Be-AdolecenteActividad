@@ -1,0 +1,64 @@
+<h1>LISTADO DE APODERADO</h1>
+<button mat-raised-button color="primary" (click)="navigateForm()" >
+  <mat-icon>add</mat-icon>
+  Nuevo
+</button>
+<label for="filtroActivo">Filtrar por estado:</label>
+<select id="filtroActivo" [(ngModel)]="filtroActivo" (change)="filtrarPorEstado()">
+  <option value="activos">Activos</option>
+  <option value="inactivos">Inactivos</option>
+</select>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col" class="text-center"><strong>Nombre</strong></th>
+    <th scope="col" class="text-center"><strong>Apellido Paterno</strong></th>
+    <th scope="col" class="text-center"><strong>Apellido Materno</strong></th>
+    <th scope="col" class="text-center"><strong>Tipo de documento</strong></th>
+    <th scope="col" class="text-center"><strong>Número de documento</strong></th>
+    <th scope="col" class="text-center"><strong>Celular</strong></th>
+    <th scope="col" class="text-center"><strong>Dirección</strong></th>
+    <th scope="col" class="text-center"><strong>Fecha de nacimiento</strong></th>
+    <th scope="col" class="text-center"><strong>Tipo de apoderado</strong></th>
+    <th scope="col" class="text-center"><strong>Acciones</strong></th>
+  </tr>
+  </thead>
+  <tbody *ngFor="let adolescente of adolescentes">
+  <tr>
+    <td class="text-center">{{adolescente.name}}</td>
+    <td class="text-center">{{adolescente.father_last_name}}</td>
+    <td class="text-center">{{adolescente.mother_last_name}}</td>
+    <td class="text-center">{{adolescente.document_type}}</td>
+    <td class="text-center">{{adolescente.document_number}}</td>
+    <td class="text-center">{{adolescente.cellphone}}</td>
+    <td class="text-center">
+      <div class="address-and-button">
+        <span class="address-text">{{adolescente.address}}</span>
+        <div class="button-container">
+          <button mat-icon-button aria-label="Open modal" (click)="openModal()">
+            <mat-icon>remove_red_eye</mat-icon>
+          </button>
+        </div>
+      </div>
+    </td>
+    <td class="text-center">{{adolescente.birthday}}</td>
+    <td class="text-center">{{adolescente.type_attorney}}</td>
+    <td>
+      <div class="columna-acciones">
+        <button (click)="editarAdolescente(adolescente)" mat-fab color="primary" aria-label="Editar" *ngIf="adolescente.active === 'A'">
+          <mat-icon>mode_edit</mat-icon>
+        </button>
+        <button (click)="deleteAdolescente(adolescente.id)" mat-fab color="warn" aria-label="Eliminar" *ngIf="adolescente.active === 'A'">
+          <mat-icon>delete</mat-icon>
+        </button>
+        <button (click)="reactivarAdolescente(adolescente.id)" mat-fab color="primary" aria-label="Reactivar" *ngIf="adolescente.active === 'I'">
+          <mat-icon>replay</mat-icon>
+        </button>
+      </div>
+    </td>
+
+  </tr>
+
+  </tbody>
+</table>

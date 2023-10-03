@@ -1,0 +1,5 @@
+.columna-acciones {
+  display: flex; /* Establecer el contenedor como flexbox */
+  gap: 3px; /* Espacio de 3px entre elementos hijos */
+  align-items: center;/* Centrar verticalmente */
+}

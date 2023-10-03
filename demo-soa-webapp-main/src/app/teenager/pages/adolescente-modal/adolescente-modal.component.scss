@@ -1,0 +1,58 @@
+.container {
+  display: flex;
+}
+
+/* Estilo de la columna izquierda */
+.column {
+   /* Hace que ambas columnas tengan el mismo ancho */
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0);
+  width: 40%;
+}
+
+/* Estilo de la columna derecha (puedes personalizarlo según tus necesidades) */
+.column:nth-child(2) {
+  background-color: rgba(242, 242, 242, 0);
+  width: 60%;
+}
+
+
+
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  margin: 0 auto;
+}
+
+/* Estilo de los campos de entrada */
+.form-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid rgba(204, 204, 204, 0);
+  border-radius: 5px;
+}
+
+/* Estilo del botón */
+.form-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4c01e0; /* Color de fondo azul */
+  color: white; /* Color del texto blanco */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Estilo del botón al pasar el cursor (hover) */
+.form-button:hover {
+  background-color: #310293; /* Cambia a fondo negro al pasar el cursor */
+}
+.columna-acciones {
+  display: flex; /* Establecer el contenedor como flexbox */
+  gap: 1px; /* Espacio de 3px entre elementos hijos */
+  align-items: center;/* Centrar verticalmente */
+}
