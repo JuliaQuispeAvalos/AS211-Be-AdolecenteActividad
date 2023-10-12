@@ -1,0 +1,87 @@
+<div class="attorney-form">
+  <form [formGroup]="adolescenteForm" class="registration-form">
+    <h2>{{ adolescenteService.adolescenteSelected ? 'Editar Registro del Adolescente' : 'Registrar Nuevo Adolescente' }}</h2>
+
+    <div class="form-column">
+      <div class="form-group">
+        <label for="name">Nombre:</label>
+        <input formControlName="name" type="text" id="name" class="form-control" name="name" required>
+        <div *ngIf="adolescenteForm?.get('name')?.hasError('lettersOnly')">
+          Debes ingresar solo letras (sin caracteres especiales).
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="father_last_name">Apellido Paterno:</label>
+        <input formControlName="father_last_name" type="text" id="father_last_name" class="form-control" name="father_last_name" required>
+        <div *ngIf="adolescenteForm?.get('father_last_name')?.hasError('lettersOnly')">
+          Debes ingresar solo letras (sin caracteres especiales).
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="mother_last_name">Apellido Materno:</label>
+        <input formControlName="mother_last_name" type="text" id="mother_last_name" class="form-control" name="maternal_last_name" required>
+        <div *ngIf="adolescenteForm?.get('mother_last_name')?.hasError('lettersOnly')">
+          Debes ingresar solo letras (sin caracteres especiales).
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="document_type">Tipo de documento:</label>
+        <select formControlName="document_type" id="document_type" class="form-control" name="document_type" required>
+          <option value="DNI">DNI</option>
+          <option value="CE">Carnet de Extranjeria</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="document_number">Número del documento:</label>
+      <input formControlName="document_number" type="text" id="document_number" class="form-control" name="document_number" required>
+      <div *ngIf="adolescenteForm.get('document_number')?.hasError('documentNumber')">
+        <div *ngIf="adolescenteForm.get('document_type')?.value === 'DNI'">
+          Debes ingresar un número válido de 8 dígitos para DNI.
+        </div>
+        <div *ngIf="adolescenteForm.get('document_type')?.value === 'CE'">
+          Debes ingresar un número válido de 11 dígitos para Carnet de Extranjeria.
+        </div>
+      </div>
+    </div>
+
+      <div class="form-group">
+        <label for="cellphone">Celular:</label>
+        <input formControlName="cellphone" type="text" id="cellphone" class="form-control" name="cellphone" required>
+        <div *ngIf="adolescenteForm?.get('cellphone')?.hasError('phoneNumber')">
+          Debes ingresar un número válido (9 dígitos).
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="address">Dirección:</label>
+        <input formControlName="address" type="text" id="address" class="form-control" name="address" required>
+
+      </div>
+
+      <div class="form-group">
+        <label for="birthday">Fecha de nacimiento:</label>
+        <input formControlName="birthday" type="date" id="birthday" class="form-control" name="birthday" required>
+      </div>
+
+      <div class="form-group">
+        <label for="type_attorney">Tipo de Apoderado:</label>
+        <select formControlName="type_attorney" id="type_attorney" class="form-control" name="type_attorney" required>
+          <option value="Papá">Papá</option>
+          <option value="Mamá">Mamá</option>
+          <option value="otro">Otro</option>
+        </select>
+      </div>
+
+    <button mat-raised-button color="primary" (click)="saveAdolescente()">
+    {{ adolescenteService.adolescenteSelected ? 'ACTUALIZAR' : 'REGISTRAR' }}
+    </button>
+
+    <button mat-stroked-button color="primary" (click)="navigateList()">Cancelar</button>
+  </form>
+</div>
+

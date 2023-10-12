@@ -1,0 +1,54 @@
+<div class="attorney-form" style="margin: 20px;">
+  <form class="registration-form">
+    <h2>Registrar Nueva Actividad</h2>
+
+    <div class="form-column">
+      <div class="form-group">
+        <label for="name">Nombre:</label>
+        <input formControlName="name" type="text" id="name" class="form-control" name="name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="father_last_name">Descripción:</label>
+        <input formControlName="father_last_name" type="text" id="father_last_name" class="form-control" name="father_last_name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="birthday">Fecha:</label>
+        <input formControlName="birthday" type="date" id="birthday" class="form-control" name="birthday" required>
+      </div>
+
+      <div class="form-group">
+        <label for="mother_last_name">Duración:</label>
+        <input formControlName="mother_last_name" type="text" id="mother_last_name" class="form-control" name="maternal_last_name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="cellphone">Localización:</label>
+        <input formControlName="cellphone" type="text" id="cellphone" class="form-control" name="cellphone" required>
+      </div>
+
+      <div class="form-group">
+        <label for="type_attorney">Tipo:</label>
+        <select formControlName="type_attorney" id="type_attorney" class="form-control" name="type_attorney" required>
+          <option value="0">Pronacej</option>
+          <option value="1">Soa</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="type_soa">Soa:</label>
+        <select formControlName="type_soa" id="type_soa" class="form-control" name="type_soa" required>
+          <option value="0">Cañete</option>
+          <option value="1">Huarochirí</option>
+          <option value="2">Yauyos</option>
+          <option value="3">Ica</option>
+        </select>
+      </div>
+
+      <button mat-raised-button color="primary">REGISTRAR</button>
+      <button mat-stroked-button color="primary" (click)="navigateList()">Cancelar</button>
+    </div>
+  </form>
+</div>
+

@@ -1,0 +1,43 @@
+<h1>LISTADO DE ADLOESCENTES CON ACTIVIDADES</h1>
+<button mat-raised-button color="primary" (click)="openModal()" >
+  <mat-icon>add</mat-icon>
+  Nuevo
+</button>
+<label for="filtroActivo">Filtrar por estado:</label>
+<select id="filtroActivo" [(ngModel)]="filtroActivo" (change)="filtrarPorEstado()">
+  <option value="activos">Activos</option>
+  <option value="inactivos">Inactivos</option>
+</select>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col" class="text-center"><strong>Activida</strong></th>
+    <th scope="col" class="text-center"><strong>Fecha de Publicación</strong></th>
+    <th scope="col" class="text-center"><strong>Fecha de Entrega</strong></th>
+    <th scope="col" class="text-center"><strong>Adolescente</strong></th>
+    <th scope="col" class="text-center"><strong>Acciones</strong></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td class="text-center">Junit cazando errores</td>
+    <td class="text-center">02-10-23</td>
+    <td class="text-center">02-10-23</td>
+    <td class="text-center">Jeancarlos Omar Padilla Castillo</td>
+    <td>
+      <div class="columna-acciones">
+        <button mat-fab color="primary" aria-label="Editar" >
+          <mat-icon>mode_edit</mat-icon>
+        </button>
+        <button  mat-fab color="warn" aria-label="Eliminar">
+          <mat-icon>delete</mat-icon>
+        </button>
+
+      </div>
+    </td>
+
+  </tr>
+
+  </tbody>
+</table>
