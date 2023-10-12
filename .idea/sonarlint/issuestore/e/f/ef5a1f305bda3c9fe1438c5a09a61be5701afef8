@@ -1,0 +1,21 @@
+
+k	java:S117 "QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ú·ˆ·ýÿÿÿÿ
+k	java:S117 "QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ú·ˆ·ýÿÿÿÿ
+k	java:S117 "QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ú·ˆ·ýÿÿÿÿ
+k	java:S117 "QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ú·ˆ·ýÿÿÿÿ
+k	java:S117 "QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ú·ˆ·ýÿÿÿÿ
+k	java:S117-"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.( ÀÙþùÿÿÿÿ
+k	java:S117-"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.( ÀÙþùÿÿÿÿ
+k	java:S117-"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.( ÀÙþùÿÿÿÿ
+k	java:S117-"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.( ÀÙþùÿÿÿÿ
+k	java:S117-"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.( ÀÙþùÿÿÿÿ
+½
+java:S1598"¦This file "Attorney.java" should be located in "com\sulca\dev\springwebfluxapi\domain\model" directory, not in "C:\Users\51992\Downloads\T03-Microservicio\microservice\T02_SoaAttorney-back-end\T02_AttorneyBack\soaMsPrograms\src\main\java\com\T02_AttorneyBack\dev\springwebfluxapi\domain\model".(÷œëå
+p	java:S116"[Rename this field "father_last_name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ñ•—Ý
+u	java:S116"[Rename this field "mother_last_name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÈŸÄˆþÿÿÿÿ
+m	java:S116"XRename this field "document_type" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(®‡ÕÏ
+o	java:S116"ZRename this field "document_number" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—«™è
+r	java:S116"XRename this field "type_attorney" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‹Ç®Åûÿÿÿÿ
+\	java:S107 "BConstructor has 10 parameters, which is greater than 7 authorized.(Ú·ˆ·ýÿÿÿÿ
+\	java:S107-"BConstructor has 11 parameters, which is greater than 7 authorized.( ÀÙþùÿÿÿÿ
+V	java:S125"<This block of commented-out lines of code should be removed.(¾é”•þÿÿÿÿ
