@@ -1,0 +1,52 @@
+<div class="attorney-form">
+  <form [formGroup]="activitiesForm" class="registration-form">
+    <h2>{{ activitiesService.actividadesSelected ? 'Editar Registro del Actividades' : 'Registrar Nueva Actividad' }}</h2>
+
+    <div class="form-column">
+      <div class="form-group">
+        <label for="name">Nombre:</label>
+        <input formControlName="name" type="text" id="name" class="form-control" name="name" required>
+        <div *ngIf="activitiesForm?.get('name')?.hasError('lettersOnly')">
+          Debes ingresar solo letras (sin caracteres especiales).
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="description">Descripción:</label>
+        <input formControlName="description" type="text" id="description" class="form-control" name="description" required>
+        <div *ngIf="activitiesForm?.get('description')?.hasError('lettersOnly')">
+          Debes ingresar solo letras (sin caracteres especiales).
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="date">Fecha:</label>
+        <input formControlName="date" type="date" id="date" class="form-control" name="date" required>
+      </div>
+
+      <div class="form-group">
+        <label for="duration">Duración:</label>
+        <input formControlName="duration" type="text" id="duration" class="form-control" name="duration" required>
+      </div>
+
+      <div class="form-group">
+        <label for="location">Ubicación:</label>
+        <input formControlName="location" type="text" id="location" class="form-control" name="location" required>
+      </div>
+      <div class="form-group">
+        <label for="type_pronacej">Tipo Pronacej:</label>
+        <select formControlName="type_pronacej" id="type_pronacej" class="form-control" name="type_pronacej" required>
+          <option value="Pronacej">Pronacej</option>
+          <option value="Soa">Soa</option>
+        </select>
+      </div>
+    </div>
+
+    <button mat-raised-button color="primary" (click)="saveActivities()">
+    {{ activitiesService.actividadesSelected ? 'ACTUALIZAR' : 'REGISTRAR' }}
+    </button>
+
+    <button mat-stroked-button color="primary" (click)="navigateList()">Cancelar</button>
+  </form>
+</div>
+

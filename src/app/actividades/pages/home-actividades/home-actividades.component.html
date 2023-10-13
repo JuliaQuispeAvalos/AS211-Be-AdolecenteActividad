@@ -1,0 +1,51 @@
+<h1>LISTADO DE ACTIVIDADES</h1>
+<button mat-raised-button color="primary" (click)="openModal()" >
+  <mat-icon>add</mat-icon>
+  Nuevo
+</button>
+<label for="filtroActivo">Filtrar por estado:</label>
+<select id="filtroActivo" [(ngModel)]="filtroActivo" (change)="filtrarPorEstado()">
+  <option value="activos">Activos</option>
+  <option value="inactivos">Inactivos</option>
+</select>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col" class="text-center"><strong>Nombre</strong></th>
+    <th scope="col" class="text-center"><strong>descripcion</strong></th>
+    <th scope="col" class="text-center"><strong>Fecha</strong></th>
+    <th scope="col" class="text-center"><strong>Duración</strong></th>
+    <th scope="col" class="text-center"><strong>Ubicación</strong></th>
+    <th scope="col" class="text-center"><strong>Tipo</strong></th>
+    <th scope="col" class="text-center"><strong>Soa</strong></th>
+    <th scope="col" class="text-center"><strong>Acciones</strong></th>
+  </tr>
+  </thead>
+  <tbody *ngFor="let actividades of actividades">
+  <tr>
+    <td class="text-center">{{actividades.name}}</td>
+    <td class="text-center">{{actividades.description}}</td>
+    <td class="text-center">{{actividades.date}}</td>
+    <td class="text-center">{{actividades.duration}}</td>
+    <td class="text-center">{{actividades.location}}</td>
+    <td class="text-center">{{actividades.type_pronacej}}</td>
+    <td class="text-center">{{actividades.type_soa}}</td>
+    <td>
+      <div class="columna-acciones">
+        <button (click)="editarActividades(actividades)" mat-fab color="primary" aria-label="Editar" *ngIf="actividades.active === 'A'">
+          <mat-icon>mode_edit</mat-icon>
+        </button>
+        <button (click)="deleteActividades(actividades.id)" mat-fab color="warn" aria-label="Eliminar" *ngIf="actividades.active === 'A'">
+          <mat-icon>delete</mat-icon>
+        </button>
+        <button (click)="reactivarActividades(actividades.id)" mat-fab color="primary" aria-label="Reactivar" *ngIf="actividades.active === 'I'">
+          <mat-icon>replay</mat-icon>
+        </button>
+      </div>
+    </td>
+
+  </tr>
+
+  </tbody>
+</table>
