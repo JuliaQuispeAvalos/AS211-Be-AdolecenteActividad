@@ -14,10 +14,10 @@ public interface ActivitiesService {
     Flux<ActivitiesResponseDto> findAll();
     Flux<ActivitiesResponseDto> findAllActive();
     Flux<ActivitiesResponseDto> findAllInactive();
-    Mono<ActivitiesResponseDto> saveNewLegalGuardian(ActivitiesRequestDto request);
-    Mono<ActivitiesResponseDto> updateLegalGuardian(ActivitiesRequestDto request, Integer id);
-    Mono<ActivitiesResponseDto> deleteLogicalLegalGuardian(Integer id);
-    Mono<ActivitiesResponseDto> reactiveLogicalLegalGuardian(Integer id);
-    Mono<Void> deleteLegalGuardian(Integer id);
+    Mono<ActivitiesResponseDto> saveNewActivities(ActivitiesRequestDto request);
+    Mono<ActivitiesResponseDto> updateActivities(ActivitiesRequestDto request, Integer id);
+    Mono<ActivitiesResponseDto> deleteLogicalActivities(Integer id);
+    Mono<ActivitiesResponseDto> reactiveLogicalActivities(Integer id);
+    Mono<Void> deleteActivities(Integer id);
 
 }

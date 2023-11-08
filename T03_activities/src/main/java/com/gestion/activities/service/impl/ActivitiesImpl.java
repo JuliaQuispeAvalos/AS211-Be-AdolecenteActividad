@@ -56,13 +56,13 @@ public class ActivitiesImpl implements ActivitiesService {
 
 
     @Override
-    public Mono<ActivitiesResponseDto> saveNewLegalGuardian(ActivitiesRequestDto request) {
+    public Mono<ActivitiesResponseDto> saveNewActivities(ActivitiesRequestDto request) {
         return this.activitiesRepository.save(toModel(request))
                 .map(ActivitiesMapper::toDto);
     }
 
     @Override
-    public Mono<ActivitiesResponseDto> updateLegalGuardian(ActivitiesRequestDto request, Integer id) {
+    public Mono<ActivitiesResponseDto> updateActivities(ActivitiesRequestDto request, Integer id) {
         return this.activitiesRepository.findById(id)
                 .switchIfEmpty(Mono.error(new ResourceNotFoundException("El identificador: " + id + "no fue encontrado.")))
                 .flatMap(dataFuncionary -> this.activitiesRepository.save(toModel(request, dataFuncionary.getId())))
@@ -70,7 +70,7 @@ public class ActivitiesImpl implements ActivitiesService {
     }
 
     @Override
-    public Mono<ActivitiesResponseDto> deleteLogicalLegalGuardian(Integer id) {
+    public Mono<ActivitiesResponseDto> deleteLogicalActivities(Integer id) {
         return this.activitiesRepository.findById(id)
                 .map((delete) -> {
                     delete.setActive("I");
@@ -81,7 +81,7 @@ public class ActivitiesImpl implements ActivitiesService {
     }
 
     @Override
-    public Mono<ActivitiesResponseDto> reactiveLogicalLegalGuardian(Integer id) {
+    public Mono<ActivitiesResponseDto> reactiveLogicalActivities(Integer id) {
         return this.activitiesRepository.findById(id)
                 .map((reactive) -> {
                     reactive.setActive("A");
@@ -92,7 +92,7 @@ public class ActivitiesImpl implements ActivitiesService {
     }
 
     @Override
-    public Mono<Void> deleteLegalGuardian(Integer id) {
+    public Mono<Void> deleteActivities(Integer id) {
         return this.activitiesRepository.deleteById(id);
     }
 }

@@ -3,6 +3,7 @@ package com.gestion.activities.domain.dto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import java.io.Serial;
 import java.io.Serializable;
@@ -14,6 +15,9 @@ public class ActivitiesRequestDto implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 8222253670338491507L;
+
+    @Id
+    private Integer id;
 
     @Column
     private String name;

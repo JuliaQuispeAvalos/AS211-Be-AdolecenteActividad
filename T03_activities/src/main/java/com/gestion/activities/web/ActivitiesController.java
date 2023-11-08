@@ -6,6 +6,7 @@ import com.gestion.activities.repository.ActivitiesRepository;
 import com.gestion.activities.service.ActivitiesService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -24,9 +25,9 @@ public class ActivitiesController {
 
     final ActivitiesRepository activitiesRepository;
 
-    @GetMapping("{id_act}")
-    public Mono<ActivitiesResponseDto> getDataActivitiesById(@PathVariable Integer id_act) {
-        return this.activitiesService.findById(id_act);
+    @GetMapping("{id}")
+    public Mono<ActivitiesResponseDto> getDataActivitiesById(@PathVariable Integer id) {
+        return this.activitiesService.findById(id);
     }
 
     @GetMapping("/listData")
@@ -49,29 +50,29 @@ public class ActivitiesController {
     }
 
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping
+    @PostMapping("/save")
     public Mono<ActivitiesResponseDto> saveNewDataActivities(@RequestBody ActivitiesRequestDto dto) {
-        return this.activitiesService.saveNewLegalGuardian(dto);
+        return this.activitiesService.saveNewActivities(dto);
     }
 
-    @PutMapping("/{id_act}")
-    public Mono<ActivitiesResponseDto> updateDataActivities(@RequestBody ActivitiesRequestDto dto, @PathVariable Integer id_act) {
-        return this.activitiesService.updateLegalGuardian(dto, id_act);
+    @PutMapping("/update/{id}")
+    public Mono<ActivitiesResponseDto> updateDataActivities(@RequestBody ActivitiesRequestDto dto, @PathVariable Integer id) {
+        return this.activitiesService.updateActivities(dto, id);
     }
 
-    @PatchMapping("/deleteLogical/{id_act}")
-    public Mono<ActivitiesResponseDto> deleteLogicalActivities(@PathVariable Integer id_act) {
-        return this.activitiesService.deleteLogicalLegalGuardian(id_act);
+    @DeleteMapping("/deleteLogical/{id}")
+    public Mono<ActivitiesResponseDto> deleteLogicalActivities(@PathVariable Integer id) {
+        return this.activitiesService.deleteLogicalActivities(id);
     }
 
-    @PatchMapping("/reactiveLogical/{id_act}")
-    public Mono<ActivitiesResponseDto> reactiveLogicalActivities(@PathVariable Integer id_act) {
-        return this.activitiesService.reactiveLogicalLegalGuardian(id_act);
+    @PutMapping(value="/reactiveLogical/{id}", produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.TEXT_EVENT_STREAM_VALUE})
+    public Mono<ActivitiesResponseDto> reactiveLogicalActivities(@PathVariable Integer id) {
+        return this.activitiesService.reactiveLogicalActivities(id);
     }
 
-    @DeleteMapping("/{id_act}")
-    public Mono<Void> deleteTotalActivities(@PathVariable Integer id_act) {
-        return this.activitiesService.deleteLegalGuardian(id_act);
+    @DeleteMapping("/dtotal/{id}")
+    public Mono<Void> deleteTotalActivities(@PathVariable Integer id) {
+        return this.activitiesService.deleteActivities(id);
     }
 
 }
