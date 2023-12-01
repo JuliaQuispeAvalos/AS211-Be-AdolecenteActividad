@@ -1,0 +1,115 @@
+<style>
+  .container {
+    display: flex;
+  }
+
+  /* Estilo de la columna izquierda */
+  .column {
+    /* Hace que ambas columnas tengan el mismo ancho */
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0);
+    width: 40%;
+  }
+
+  /* Estilo de la columna derecha (puedes personalizarlo según tus necesidades) */
+  .column:nth-child(2) {
+    background-color: rgba(242, 242, 242, 0);
+    width: 60%;
+  }
+
+
+
+
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    margin: 0 auto;
+  }
+
+  /* Estilo de los campos de entrada */
+  .form-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(204, 204, 204, 0);
+    border-radius: 5px;
+  }
+
+  /* Estilo del botón */
+  .form-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4c01e0; /* Color de fondo azul */
+    color: white; /* Color del texto blanco */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  /* Estilo del botón al pasar el cursor (hover) */
+  .form-button:hover {
+    background-color: #310293; /* Cambia a fondo negro al pasar el cursor */
+  }
+  .columna-acciones {
+    display: flex; /* Establecer el contenedor como flexbox */
+    gap: 1px; /* Espacio de 3px entre elementos hijos */
+    align-items: center;/* Centrar verticalmente */
+  }
+
+</style>
+<div class="attorney-form" style="margin: 20px;">
+  <form [formGroup]="actividadesForm" class="registration-form">
+    <h2>{{actividadesService.actividadesSelected ? 'Editar Actividad':'Crear Nueva Actividad'}}</h2>
+
+    <div class="form-column">
+      <div class="form-group">
+        <label for="name">Nombre:</label>
+        <input formControlName="name" type="text" id="name" class="form-control" name="name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="description">Descripción:</label>
+        <input formControlName="description" type="text" id="description" class="form-control" name="description" required>
+      </div>
+
+      <div class="form-group">
+        <label for="date">Fecha:</label>
+        <input formControlName="date" type="date" id="date" class="form-control" name="date" required>
+      </div>
+
+      <div class="form-group">
+        <label for="duration">Duración:</label>
+        <input formControlName="duration" type="text" id="duration" class="form-control" name="duration" required>
+      </div>
+
+      <div class="form-group">
+        <label for="location">Localización:</label>
+        <input formControlName="location" type="text" id="location" class="form-control" name="location" required>
+      </div>
+
+      <div class="form-group">
+        <label for="type_pronacej">Tipo:</label>
+        <select formControlName="type_pronacej" id="type_pronacej" class="form-control" name="type_pronacej" required>
+          <option value="0">Pronacej</option>
+          <option value="1">Soa</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="type_soa">Soa:</label>
+        <select formControlName="type_soa" id="type_soa" class="form-control" name="type_soa" required>
+          <option value="0">Cañete</option>
+          <option value="1">Huarochirí</option>
+          <option value="2">Yauyos</option>
+          <option value="3">Ica</option>
+        </select>
+      </div>
+
+      <button mat-raised-button color="primary" (click)="saveActividades()">{{actividadesService.actividadesSelected ? 'Editar':'Registrar'}}</button>
+      <button mat-stroked-button color="primary" (click)="navigateList()">Cancelar</button>
+    </div>
+  </form>
+</div>
+

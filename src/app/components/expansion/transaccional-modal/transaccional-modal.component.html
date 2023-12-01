@@ -1,0 +1,76 @@
+<form [formGroup]="transaccionalForm" >
+
+
+  <table class="column">
+    <h2>Adolescentes</h2>
+    <button (click)="toggleSelectAllAdolescente()" mat-raised-button color="primary">Seleccionar Todo</button>
+    <thead>
+    <tr>
+      <th scope="col" class="text-center"><strong></strong></th>
+      <th scope="col" class="text-center"><strong>Nombre Completo</strong></th>
+      <th scope="col" class="text-center"><strong>DNI/CNE</strong></th>
+      <th scope="col" class="text-center"><strong>Numero</strong></th>
+    </tr>
+    </thead>
+    <tbody *ngFor="let adolescente of adolescentes">
+    <tr >
+      <td class="text-center">
+        <input formControlName="id_teenager" type="checkbox" (change)="handleCheckboxChange(adolescente.id)" [(ngModel)]="adolescente.checked" />
+      <td class="text-center">{{adolescente.father_last_name}} {{adolescente.mother_last_name}}, {{adolescente.name}} </td>
+      <td class="text-center">{{adolescente.document_type}}</td>
+      <td class="text-center">{{adolescente.document_number}}</td>
+    </tr>
+
+    </tbody>
+  </table>
+
+
+  <table class="column">
+    <h2>Actividades</h2>
+    <button (click)="toggleSelectAll()" mat-raised-button color="primary">Seleccionar Todo</button>
+    <thead>
+    <tr>
+      <th scope="col" class="text-center"><strong></strong></th>
+      <th scope="col" class="text-center"><strong>Nombre</strong></th>
+      <th scope="col" class="text-center"><strong>Duración </strong></th>
+      <th scope="col" class="text-center"><strong>Creación</strong></th>
+    </tr>
+    </thead>
+    <tbody *ngFor="let actividades of actividades">
+    <tr>
+      <td class="text-center">
+        <input formControlName="id_activities" type="checkbox" (change)="handleCheckboxChangeActividad(actividades.id)" [(ngModel)]="actividades.checked" />
+      <td class="text-center">{{actividades.name}} </td>
+      <td class="text-center">{{actividades.duration}}</td>
+      <td class="text-center">{{actividades.date | date:'dd-MMM-yy'}}</td>
+    </tr>
+
+    </tbody>
+  </table>
+
+
+  <table class="column2 izquierda" cellspacing="0">
+
+    <thead>
+    <tr>
+      <th scope="col" class="text-center">Duration</th>
+      <th scope="col" class="text-center"><input class="input" formControlName="duration" matInput placeholder="##"></th>
+    </tr>
+    </thead>
+    <tbody >
+    <tr>
+
+      <td class="text-center">Nota</td>
+      <td class="text-center"><input class="input" formControlName="notes" matInput placeholder="nota"></td>
+    </tr>
+    <tr>
+
+      <td class="text-center"></td>
+
+    </tr>
+    </tbody>
+  </table>
+  <button mat-raised-button color="primary" class="example-full-width column"  (click)="saveActividades()">Confirmar</button>
+
+
+</form>

@@ -1,0 +1,62 @@
+
+<div class="attorney-form" style="margin: 20px;">
+  <form [formGroup]="actividadesForm" class="registration-form">
+    <h2>{{actividadesService.actividadesSelected ? 'Editar Actividad':'Crear Nueva Actividad'}}</h2>
+
+    <div class="form-column">
+      <div class="form-input">
+        <label for="name">Nombre:</label>
+        <br>
+        <input style="width: 90%;padding:10px;border-radius:7px;" formControlName="name" type="text" id="name" class="form-control" name="name" required>
+      </div>
+
+      <div class="form-input">
+        <label for="description">Descripción:</label>
+        <br>
+        <input style="width: 90%;padding:10px;border-radius:7px;" formControlName="description" type="text" id="description" class="form-control" name="description" required>
+      </div>
+
+      <div class="form-input">
+        <label for="date">Fecha:</label>
+        <br>
+        <input style="width: 90%;padding:10px;border-radius:7px;" formControlName="date" type="date" id="date" class="form-control" name="date" required>
+      </div>
+
+      <div class="form-input">
+        <label for="duration">Duración:</label>
+        <br>
+        <input style="width: 90%;padding:10px;border-radius:7px;" formControlName="duration" type="text" id="duration" class="form-control" name="duration" required>
+      </div>
+
+      <div class="form-input">
+        <label for="location">Localización:</label>
+        <br>
+        <input style="width: 90%;padding:10px;border-radius:7px;" formControlName="location" type="text" id="location" class="form-control" name="location" required>
+      </div>
+
+      <div class="form-input">
+        <label for="type_pronacej">Tipo:</label>
+        <br>
+        <select style="width: 90%;padding:10px;border-radius:7px;" formControlName="type_pronacej" id="type_pronacej" class="form-control" name="type_pronacej" required>
+          <option value="0">Pronacej</option>
+          <option value="1">Soa</option>
+        </select>
+      </div>
+
+      <div class="form-input">
+        <label for="type_soa">Soa:</label>
+        <br>
+        <select style="width: 90%;padding:10px;border-radius:7px;" formControlName="type_soa" id="type_soa" class="form-control" name="type_soa" required>
+          <option value="0">Cañete</option>
+          <option value="1">Huarochirí</option>
+          <option value="2">Yauyos</option>
+          <option value="3">Ica</option>
+        </select>
+      </div>
+
+      <button mat-raised-button color="primary" (click)="saveActividades()">{{actividadesService.actividadesSelected ? 'Editar':'Registrar'}}</button>
+      <button mat-stroked-button color="primary" (click)="navigateList()">Cancelar</button>
+    </div>
+  </form>
+</div>
+

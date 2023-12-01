@@ -1,0 +1,46 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.left, .right {
+  flex: 1;
+  box-sizing: border-box;
+  padding: 10px;
+  margin: 5px;
+}
+
+.left {
+}
+
+.right {
+}
+
+
+
+.column {
+  width: 40%;
+  float: left;
+}
+.example-full-width{
+  width:5px;
+}
+.izquierda{
+
+}
+.column2 {
+  width: 20%;
+  float: right;
+}
+.input {
+  border: none; /* Quita el borde del input */
+  outline: none; /* Quita el contorno al enfocar el input */
+  padding: 8px; /* Añade un relleno para mejorar la apariencia */
+  /* Otros estilos personalizados según tus necesidades */
+}
+
+/* Añade un estilo adicional para resaltar el input cuando está enfocado (opcional) */
+.input:focus {
+  border: 1px solid #565656;
+  border-radius:8px;
+}
